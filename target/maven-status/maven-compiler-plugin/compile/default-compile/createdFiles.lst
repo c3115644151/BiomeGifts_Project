@@ -1,0 +1,9 @@
+com\biomegifts\ConfigManager$CropConfig.class
+com\biomegifts\CropListener.class
+com\biomegifts\ConfigManager$BiomeType.class
+com\biomegifts\ConfigManager.class
+com\biomegifts\BiomeGifts.class
+com\biomegifts\ItemManager.class
+com\biomegifts\SpecialCropManager.class
+com\biomegifts\ConfigManager$ResourceConfig.class
+com\biomegifts\MiningListener.class

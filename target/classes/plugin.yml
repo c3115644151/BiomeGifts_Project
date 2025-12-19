@@ -1,0 +1,6 @@
+name: BiomeGifts
+version: 1.0-SNAPSHOT
+main: com.biomegifts.BiomeGifts
+api-version: 1.21
+authors: [TraeAI]
+description: A plugin that adds biome-specific gifts and crop growth modifiers.

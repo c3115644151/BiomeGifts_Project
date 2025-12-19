@@ -1,0 +1,163 @@
+# BiomeGifts Configuration
+# 核心玩法：地域馈赠 (Biome Specific Gifts)
+
+# ==========================================
+# 矿物特化 (Ore Specialization)
+# ==========================================
+ores:
+  # 煤炭：沼泽/雨林富集
+  COAL_ORE:
+    # 兼容深层矿石
+    aliases: [DEEPSLATE_COAL_ORE]
+    # 特产掉落物 (对应 ItemManager 中的 key)
+    drop_item: "LIGNITE"
+    base_chance: 0.2
+    # 群系配置 (支持正则匹配，不区分大小写)
+    rich_biomes: 
+      - ".*SWAMP.*"
+      - ".*JUNGLE.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*DESERT.*"
+      - ".*BADLANDS.*"
+    poor_multiplier: 0.5
+    
+  # 铁矿：热带草原/石林(Terra)富集
+  IRON_ORE:
+    aliases: [DEEPSLATE_IRON_ORE]
+    drop_item: "RICH_SLAG"
+    base_chance: 0.2
+    rich_biomes:
+      - ".*SAVANNA.*"
+      - ".*STONY.*"
+      - ".*MEADOW.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*OCEAN.*"
+    poor_multiplier: 0.5
+
+  # 金矿：恶地/河流富集
+  GOLD_ORE:
+    aliases: [DEEPSLATE_GOLD_ORE, NETHER_GOLD_ORE]
+    drop_item: "GOLD_DUST"
+    base_chance: 0.2
+    rich_biomes:
+      - ".*BADLANDS.*"
+      - ".*RIVER.*"
+      - ".*MESA.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*FOREST.*"
+    poor_multiplier: 0.5
+    
+  # 红石：沙漠富集
+  REDSTONE_ORE:
+    aliases: [DEEPSLATE_REDSTONE_ORE]
+    drop_item: "CHARGED_DUST"
+    base_chance: 0.2
+    rich_biomes:
+      - ".*DESERT.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*SNOW.*"
+      - ".*ICE.*"
+    poor_multiplier: 0.5
+    
+  # 钻石：雪山/冰刺富集
+  DIAMOND_ORE:
+    aliases: [DEEPSLATE_DIAMOND_ORE]
+    drop_item: "ICE_SHARD"
+    base_chance: 0.2
+    rich_biomes:
+      - ".*SNOW.*"
+      - ".*ICE.*"
+      - ".*FROZEN.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*DESERT.*"
+      - ".*JUNGLE.*"
+    poor_multiplier: 0.5
+    
+  # 青金石：海洋/深海富集
+  LAPIS_ORE:
+    aliases: [DEEPSLATE_LAPIS_ORE]
+    drop_item: "TIDE_ESSENCE"
+    base_chance: 0.2
+    rich_biomes:
+      - ".*OCEAN.*"
+      - ".*BEACH.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*PEAKS.*"
+    poor_multiplier: 0.5
+
+# ==========================================
+# 作物特化 (Crop Specialization)
+# ==========================================
+crops:
+  # 小麦/胡萝卜：平原/森林
+  WHEAT:
+    aliases: [CARROTS, POTATOES]
+    drop_item: "GOLDEN_WHEAT"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*PLAINS.*"
+      - ".*FOREST.*"
+    rich_multiplier: 1.5
+    # 富集区：加速概率 (额外生长一级的概率)
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*DESERT.*"
+      - ".*BADLANDS.*"
+      - ".*ICE.*"
+    poor_multiplier: 0.5
+    # 贫瘠区：减速概率 (取消生长的概率)
+    poor_speed_penalty: 0.3
+      
+  # 仙人掌：沙漠/恶地
+  CACTUS:
+    drop_item: "WATER_GEL"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*DESERT.*"
+      - ".*BADLANDS.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*SNOW.*"
+      - ".*ICE.*"
+      - ".*FOREST.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.5
+      
+  # 西瓜/南瓜：雨林/沼泽
+  MELON:
+    aliases: [PUMPKIN, MELON_STEM, PUMPKIN_STEM]
+    drop_item: "TROPICAL_NECTAR"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*JUNGLE.*"
+      - ".*SWAMP.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*DESERT.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+      
+  # 甜菜根/浆果：雪原/针叶林
+  BEETROOTS:
+    aliases: [SWEET_BERRY_BUSH]
+    drop_item: "FROST_BERRY"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*SNOW.*"
+      - ".*TAIGA.*"
+      - ".*SPRUCE.*" # 针叶林
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*DESERT.*"
+      - ".*JUNGLE.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3

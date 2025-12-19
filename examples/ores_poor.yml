@@ -1,0 +1,18 @@
+id: ORES_POOR
+type: BIOME
+abstract: true
+extends:
+  - ORES_DEFAULT
+
+features:
+  ores:
+    - DIAMOND_ORE_POOR
+    - IRON_ORE_POOR
+    - COAL_ORE_POOR
+
+# 在 features/ores/diamond_ore_poor.yml 中:
+# id: DIAMOND_ORE_POOR
+# type: ORE
+# material: DIAMOND_ORE
+# size: 2
+# count: 2

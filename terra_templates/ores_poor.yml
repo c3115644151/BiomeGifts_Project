@@ -1,0 +1,14 @@
+id: ORES_POOR
+type: BIOME
+abstract: true
+
+features:
+  ores:
+    - DIAMOND_ORE_POOR
+    - LAPIS_ORE_POOR
+    - GOLD_ORE_POOR
+    - IRON_ORE_POOR
+    - COAL_ORE_POOR
+    - REDSTONE_ORE_POOR
+    - COPPER_ORE
+    - EMERALD_ORE

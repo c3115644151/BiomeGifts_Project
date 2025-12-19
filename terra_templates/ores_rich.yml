@@ -1,0 +1,14 @@
+id: ORES_RICH
+type: BIOME
+abstract: true
+
+features:
+  ores:
+    - DIAMOND_ORE_RICH
+    - LAPIS_ORE_RICH
+    - GOLD_ORE_RICH
+    - IRON_ORE_RICH
+    - COAL_ORE_RICH
+    - REDSTONE_ORE_RICH
+    - COPPER_ORE
+    - EMERALD_ORE

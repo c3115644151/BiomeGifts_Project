@@ -1,0 +1,23 @@
+id: ORES_RICH
+type: BIOME
+abstract: true
+extends:
+  - ORES_DEFAULT # 继承默认配置
+
+features:
+  ores:
+    # 这里我们重新定义矿物列表，或者覆盖原有定义
+    # 在 Terra 中，如果要修改生成率，通常需要重写具体的 Feature 配置
+    # 但简单起见，我们假设用户会在这里引用更高密度的 Feature
+    - DIAMOND_ORE_RICH
+    - IRON_ORE_RICH
+    - COAL_ORE_RICH
+    # ... 其他富集矿物
+
+# 注意：你需要定义具体的 Feature (如 DIAMOND_ORE_RICH)
+# 在 features/ores/diamond_ore_rich.yml 中:
+# id: DIAMOND_ORE_RICH
+# type: ORE
+# material: DIAMOND_ORE
+# size: 8  (默认可能 4)
+# count: 12 (默认可能 6)
