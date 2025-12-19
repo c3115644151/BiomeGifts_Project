@@ -36,6 +36,20 @@ ores:
       - ".*OCEAN.*"
     poor_multiplier: 0.5
 
+  # 铜矿：溶洞/河流富集
+  COPPER_ORE:
+    aliases: [DEEPSLATE_COPPER_ORE]
+    drop_item: "COPPER_CRYSTAL"
+    base_chance: 0.2
+    rich_biomes:
+      - ".*DRIPSTONE.*"
+      - ".*RIVER.*"
+      - ".*BEACH.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*DESERT.*"
+    poor_multiplier: 0.5
+
   # 金矿：恶地/河流富集
   GOLD_ORE:
     aliases: [DEEPSLATE_GOLD_ORE, NETHER_GOLD_ORE]
@@ -91,27 +105,108 @@ ores:
       - ".*PEAKS.*"
     poor_multiplier: 0.5
 
+  # 绿宝石：高山/山地富集
+  EMERALD_ORE:
+    aliases: [DEEPSLATE_EMERALD_ORE]
+    drop_item: "JADE_SHARD"
+    base_chance: 0.2
+    rich_biomes:
+      - ".*MOUNTAIN.*"
+      - ".*PEAKS.*"
+      - ".*HILLS.*"
+      - ".*SLOPES.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*OCEAN.*"
+      - ".*PLAINS.*"
+    poor_multiplier: 0.5
+
+  # 紫水晶：繁茂洞穴/溶洞富集
+  AMETHYST_CLUSTER:
+    drop_item: "ECHO_SHARD"
+    base_chance: 0.2
+    rich_biomes:
+      - ".*LUSH.*"
+      - ".*DRIPSTONE.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*PLAINS.*"
+    poor_multiplier: 0.5
+
+  # 下界石英：下界荒原富集
+  NETHER_QUARTZ_ORE:
+    drop_item: "SOUL_SHARD"
+    base_chance: 0.2
+    rich_biomes:
+      - ".*NETHER_WASTES.*"
+      - ".*SOUL_SAND_VALLEY.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*CRIMSON.*"
+      - ".*WARPED.*"
+    poor_multiplier: 0.5
+
+  # 远古残骸：玄武岩三角洲富集
+  ANCIENT_DEBRIS:
+    drop_item: "VULCAN_SCALE"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*BASALT.*"
+      - ".*DELTAS.*"
+    rich_multiplier: 1.5
+    poor_biomes:
+      - ".*SOUL.*"
+    poor_multiplier: 0.5
+
 # ==========================================
 # 作物特化 (Crop Specialization)
 # ==========================================
 crops:
-  # 小麦/胡萝卜：平原/森林
+  # 小麦：平原/森林
   WHEAT:
-    aliases: [CARROTS, POTATOES]
     drop_item: "GOLDEN_WHEAT"
     base_chance: 0.1
     rich_biomes:
       - ".*PLAINS.*"
       - ".*FOREST.*"
+      - ".*MEADOW.*"
     rich_multiplier: 1.5
-    # 富集区：加速概率 (额外生长一级的概率)
     rich_speed_bonus: 0.3
     poor_biomes:
       - ".*DESERT.*"
       - ".*BADLANDS.*"
       - ".*ICE.*"
     poor_multiplier: 0.5
-    # 贫瘠区：减速概率 (取消生长的概率)
+    poor_speed_penalty: 0.3
+
+  # 胡萝卜：森林/平原
+  CARROTS:
+    drop_item: "RUBY_CARROT"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*FOREST.*"
+      - ".*PLAINS.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*DESERT.*"
+      - ".*BADLANDS.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+
+  # 马铃薯：平原/山地
+  POTATOES:
+    drop_item: "TERRA_POTATO"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*PLAINS.*"
+      - ".*HILLS.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*DESERT.*"
+      - ".*BADLANDS.*"
+    poor_multiplier: 0.5
     poor_speed_penalty: 0.3
       
   # 仙人掌：沙漠/恶地
@@ -130,9 +225,9 @@ crops:
     poor_multiplier: 0.5
     poor_speed_penalty: 0.5
       
-  # 西瓜/南瓜：雨林/沼泽
+  # 西瓜：雨林/沼泽
   MELON:
-    aliases: [PUMPKIN, MELON_STEM, PUMPKIN_STEM]
+    aliases: [MELON_STEM]
     drop_item: "TROPICAL_NECTAR"
     base_chance: 0.1
     rich_biomes:
@@ -144,20 +239,150 @@ crops:
       - ".*DESERT.*"
     poor_multiplier: 0.5
     poor_speed_penalty: 0.3
-      
-  # 甜菜根/浆果：雪原/针叶林
-  BEETROOTS:
-    aliases: [SWEET_BERRY_BUSH]
-    drop_item: "FROST_BERRY"
+
+  # 南瓜：平原/森林
+  PUMPKIN:
+    aliases: [PUMPKIN_STEM]
+    drop_item: "GLOW_PUMPKIN"
     base_chance: 0.1
     rich_biomes:
-      - ".*SNOW.*"
+      - ".*PLAINS.*"
+      - ".*FOREST.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*DESERT.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+      
+  # 甜菜根：针叶林/雪原
+  BEETROOTS:
+    drop_item: "CRIMSON_ESSENCE"
+    base_chance: 0.1
+    rich_biomes:
       - ".*TAIGA.*"
-      - ".*SPRUCE.*" # 针叶林
+      - ".*SNOW.*"
     rich_multiplier: 1.5
     rich_speed_bonus: 0.3
     poor_biomes:
       - ".*DESERT.*"
       - ".*JUNGLE.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+
+  # 甜浆果：针叶林/雪原
+  SWEET_BERRY_BUSH:
+    drop_item: "FROST_BERRY"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*TAIGA.*"
+      - ".*SNOW.*"
+      - ".*SPRUCE.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*DESERT.*"
+      - ".*JUNGLE.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+
+  # 甘蔗：河流/沼泽
+  SUGAR_CANE:
+    drop_item: "CRYSTAL_CANE"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*RIVER.*"
+      - ".*SWAMP.*"
+      - ".*BEACH.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*DESERT.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+
+  # 可可豆：丛林
+  COCOA:
+    drop_item: "DARK_COCOA"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*JUNGLE.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*SNOW.*"
+      - ".*DESERT.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+
+  # 竹子：竹林/丛林
+  BAMBOO:
+    drop_item: "JADE_SHOOT"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*BAMBOO.*"
+      - ".*JUNGLE.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*SNOW.*"
+      - ".*DESERT.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+
+  # 海带：海洋
+  KELP:
+    aliases: [KELP_PLANT]
+    drop_item: "IODINE_CRYSTAL"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*OCEAN.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*RIVER.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+
+  # 地狱疣：下界要塞/下界
+  NETHER_WART:
+    drop_item: "DOOM_SPORE"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*NETHER.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*OVERWORLD.*" # 很难在主世界种，除非有特殊手段
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+
+  # 发光浆果：繁茂洞穴
+  CAVE_VINES:
+    aliases: [CAVE_VINES_PLANT]
+    drop_item: "CAVE_PEARL"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*LUSH.*"
+      - ".*CAVE.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*DESERT.*"
+    poor_multiplier: 0.5
+    poor_speed_penalty: 0.3
+
+  # 紫颂果：末地
+  CHORUS_PLANT:
+    aliases: [CHORUS_FLOWER]
+    drop_item: "VOID_CORE"
+    base_chance: 0.1
+    rich_biomes:
+      - ".*END.*"
+    rich_multiplier: 1.5
+    rich_speed_bonus: 0.3
+    poor_biomes:
+      - ".*NETHER.*"
+      - ".*OVERWORLD.*"
     poor_multiplier: 0.5
     poor_speed_penalty: 0.3

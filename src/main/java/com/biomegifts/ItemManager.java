@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,10 +42,30 @@ public class ItemManager {
         
         // 作物特产
         registerItem("GOLDEN_WHEAT", Material.WHEAT, "黄金麦穗", 10005, "§6只有温带的阳光才能晒出的饱满谷物。");
-        registerItem("WATER_GEL", Material.SLIME_BALL, "储水凝胶", 10010, "§a沙漠植物为了生存进化出的精华。"); // 暂用粘液球
+        registerItem("WATER_GEL", Material.SLIME_BALL, "储水凝胶", 10010, "§a沙漠植物为了生存进化出的精华。");
         registerItem("TROPICAL_NECTAR", Material.HONEY_BOTTLE, "热带糖蜜", 10011, "§e湿热环境下积累的高糖分蜜露。");
         registerItem("FROST_BERRY", Material.SWEET_BERRIES, "霜糖果实", 10012, "§b经霜之后变得异常甜美的果实。");
-        
+
+        // 新增矿业特产 (Ores+)
+        registerItem("COPPER_CRYSTAL", Material.RAW_COPPER, "孔雀石晶体", 10014, "§2铜在特定环境下结晶出的伴生宝石，有一种氧化后的美感。");
+        registerItem("JADE_SHARD", Material.EMERALD, "高山翠玉", 10015, "§a比绿宝石更纯净，带有东方韵味的玉石原石。");
+        registerItem("ECHO_SHARD", Material.AMETHYST_SHARD, "共鸣晶簇", 10016, "§d发着微光的紫色尖刺状晶体，周围有一圈声波状的粒子效果。");
+        registerItem("SOUL_SHARD", Material.QUARTZ, "灵魂玻片", 10017, "§f苍白半透明的薄片，里面仿佛封印着扭曲的灵魂面孔。");
+        registerItem("VULCAN_SCALE", Material.NETHERITE_SCRAP, "火神之鳞", 10018, "§6暗金色带有熔岩裂纹的鳞片状金属，看起来非常坚硬且烫手。");
+
+        // 新增农业特产 (Crops+)
+        registerItem("TERRA_POTATO", Material.POTATO, "大地之心薯", 10019, "§6吸收了大地精华的完美块茎，看起来就淀粉满满，非常抗饿。");
+        registerItem("RUBY_CARROT", Material.CARROT, "红玉胡萝卜", 10020, "§c通体晶莹剔透，富含维生素到了结晶的地步，据说吃了眼睛会发光。");
+        registerItem("CRIMSON_ESSENCE", Material.BEETROOT, "深红血精", 10021, "§4饱满的深红色球体，这是提纯后的生命精华。");
+        registerItem("GLOW_PUMPKIN", Material.PUMPKIN_SEEDS, "辉光南瓜瓤", 10022, "§6吸收了日照的精华，哪怕不插火把，它自己都在发光。");
+        registerItem("CRYSTAL_CANE", Material.SUGAR_CANE, "水晶糖柱", 10023, "§f像玻璃棒一样透明，糖分饱和度200%的极品甘蔗。");
+        registerItem("DARK_COCOA", Material.COCOA_BEANS, "醇黑可可脂", 10024, "§8顶级巧克力的原材料，看着就觉得苦中带甜。");
+        registerItem("JADE_SHOOT", Material.BAMBOO, "翠玉竹笋", 10025, "§a质感完全是玉石的短小竹笋，熊猫看了都舍不得吃的宝物。");
+        registerItem("IODINE_CRYSTAL", Material.DRIED_KELP, "深海碘晶", 10026, "§1来自深海的馈赠，炼金术的重要材料。");
+        registerItem("DOOM_SPORE", Material.NETHER_WART, "厄运孢子簇", 10027, "§4炼制邪恶药水的核心，看着就掉SAN值。");
+        registerItem("CAVE_PEARL", Material.GLOW_BERRIES, "洞穴夜明珠", 10028, "§e繁茂洞穴的照明之源，可以挂在身上当灯泡。");
+        registerItem("VOID_CORE", Material.CHORUS_FRUIT, "虚空回响核", 10029, "§5形状破碎的几何体，吃下去可能会瞬移到另一个维度。");
+
         // 特殊种子
         registerItem("SPIRIT_WHEAT_SEEDS", Material.WHEAT_SEEDS, "灵契之种", 10013, "§6地灵赠予的特殊种子，成熟后必结出黄金麦穗。");
 
@@ -65,5 +86,9 @@ public class ItemManager {
 
     public ItemStack getItem(String key) {
         return customItems.get(key) != null ? customItems.get(key).clone() : null;
+    }
+
+    public List<String> getItemKeys() {
+        return new ArrayList<>(customItems.keySet());
     }
 }

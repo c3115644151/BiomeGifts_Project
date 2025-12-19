@@ -24,6 +24,9 @@ public class BiomeGifts extends JavaPlugin {
         // Register Listeners
         getServer().getPluginManager().registerEvents(new MiningListener(this), this);
         getServer().getPluginManager().registerEvents(new CropListener(this), this);
+
+        // Register Commands
+        getCommand("getgift").setExecutor(new BiomeGiftsCommand(this));
         
         getLogger().info("BiomeGifts has been enabled!");
     }
