@@ -68,7 +68,9 @@
 *   **指令**: `/getgift <物品ID>`
 *   **权限**: `biomegifts.admin`
 *   **功能**: 管理员可以直接获取指定的特产物品。
-*   **特性**: 支持 Tab 键自动补全所有可用的物品 ID（如 `GOLDEN_WHEAT`, `COPPER_CRYSTAL` 等），无需记忆复杂的 ID。
+*   **特性**:
+    *   支持 Tab 键自动补全所有可用的物品 ID（如 `GOLDEN_WHEAT`, `COPPER_CRYSTAL` 等）。
+    *   支持输入 `ALL` (如 `/getgift ALL`) 一键获取所有特产物品，方便测试。
 
 ---
 

@@ -41,6 +41,22 @@ public class BiomeGiftsCommand implements CommandExecutor, TabCompleter {
         }
 
         String key = args[0].toUpperCase();
+
+        Player player = (Player) sender;
+
+        if (key.equals("ALL")) {
+            int count = 0;
+            for (String itemKey : plugin.getItemManager().getItemKeys()) {
+                ItemStack item = plugin.getItemManager().getItem(itemKey);
+                if (item != null) {
+                    player.getInventory().addItem(item);
+                    count++;
+                }
+            }
+            sender.sendMessage("§a已获取所有地域馈赠物品 (共 " + count + " 种)。");
+            return true;
+        }
+
         ItemStack item = plugin.getItemManager().getItem(key);
 
         if (item == null) {
@@ -48,7 +64,6 @@ public class BiomeGiftsCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        Player player = (Player) sender;
         player.getInventory().addItem(item);
         sender.sendMessage("§a已获取物品: " + key);
 
@@ -58,7 +73,9 @@ public class BiomeGiftsCommand implements CommandExecutor, TabCompleter {
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 1) {
-            return itemKeys.stream()
+            List<String> completions = new ArrayList<>(itemKeys);
+            completions.add("ALL");
+            return completions.stream()
                     .filter(s -> s.startsWith(args[0].toUpperCase()))
                     .collect(Collectors.toList());
         }
