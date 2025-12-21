@@ -46,17 +46,29 @@
     *   **结果**: 判定成功后，除了原版掉落外，额外掉落自定义物品（如“余烬碎片”），并播放音效。
 
 ### 3.3 农业系统 (`CropListener.java`)
-包含两个核心部分：生长干预与收割奖励。
+包含两个核心部分：生长数据提供与收割奖励。
 
-#### 3.3.1 生长干预 (`BlockGrowEvent`)
+#### 3.3.1 生长干预 (联动机制)
+*   **旧机制**：直接监听 `BlockGrowEvent` 并根据群系取消事件（减速）或跳级生长（加速）。
+*   **新机制 (CuisineFarming 联动)**：
+    *   插件会检测服务器是否安装了 **CuisineFarming (耕食传说)** 插件。
+    *   **若存在 CuisineFarming**：`CropListener` 即使监听到生长事件，也**不再主动干预**（不做任何取消或加速操作）。它转而作为**数据提供者**，将当前群系的 `richSpeedBonus`（正值）或 `poorSpeedPenalty`（负值）通过配置供 CuisineFarming 读取。
+    *   **计算公式**：CuisineFarming 会将本插件提供的加成/惩罚值直接累加到其统一的效率公式中（例如：贫瘠惩罚 0.3 会被视为 -0.3 效率）。
+    *   **若不存在 CuisineFarming**：保留原有的独立逻辑（如下所述），作为后备方案运行。
+
+#### 3.3.2 独立模式下的生长逻辑 (Legacy)
+（仅当 CuisineFarming 未安装时生效）
 *   **Poor 区域**: 触发 `poorSpeedPenalty` 概率判定，若命中则 `event.setCancelled(true)`，实现**生长减缓**。
 *   **Rich 区域**: 触发 `richSpeedBonus` 概率判定，若命中：
     1.  播放 `HAPPY_VILLAGER` 粒子。
     2.  **跳级生长**: 在原版生长 (+1 age) 的基础上，额外再 +1 age，实现**生长加速**。
 
-#### 3.3.2 收割奖励 (`BlockBreakEvent`)
+#### 3.3.3 收割奖励 (`BlockBreakEvent`)
 *   **条件**: 作物必须完全成熟 (`Age == MaxAge`)。
-*   **逻辑**: 与采矿类似，根据群系计算概率掉落特产（如“黄金麦穗”）。
+*   **统一掉落机制 (Unified Drop System)**: 
+    *   本插件作为**核心执行者**，接管了所有相关插件的特产掉落计算。
+    *   **公式**: `TotalChance = BaseChance (Biome) + FertilityBonus (Cuisine) + SpiritBonus (Spirit)`
+    *   这意味着不再有独立的“肥力掉落”或“地灵掉落”，所有加成统一汇总为单次判定，避免了多次独立判定导致的概率分布不均或“一次掉三份”的问题。
 *   **特殊机制**: 如果该作物被标记为 `SpecialCrop` (由灵契之种种植)，则**100%掉落**高阶特产，并移除特殊标记。
 
 ### 3.4 特殊作物管理 (`SpecialCropManager.java`)
@@ -116,17 +128,18 @@ BiomeGifts 系统不仅仅依赖插件代码进行后期的掉落调整，还通
 ## 5. 技术细节备忘 (Technical Notes)
 
 ### 5.1 生长跳级实现
-在 `BlockGrowEvent` 中，`event.getNewState()` 返回的是即将变更的方块状态（Snapshot）。为了实现跳级（+2 Age），我们采取了以下策略（视具体版本实现微调）：
-1.  取消原事件，手动设置方块数据为当前 Age + 2。
-2.  或者直接修改 `newState` 的数据并让事件继续（更兼容其他插件）。
-*当前实现倾向于：若触发 Bonus，播放特效并尝试修改 newState 或手动设置数据。*
+*   **联动模式**: 本插件仅提供 `richSpeedBonus` 或 `poorSpeedPenalty` 数值，具体的加速（补课）或减速（拦截）逻辑完全由 **CuisineFarming** 接管。
+*   **独立模式**: 
+    *   在 `BlockGrowEvent` 中，`event.getNewState()` 返回的是即将变更的方块状态（Snapshot）。
+    *   跳级实现：手动设置方块数据为当前 Age + 2，并播放粒子效果。
 
 ### 5.2 概率计算
 统一使用 `ThreadLocalRandom.current().nextDouble()` 进行高效的随机数生成。
 *   概率公式: `Random < BaseChance * Multiplier`
 
 ### 5.3 联动性
-本系统设计为独立运行，但提供了 API 或物品钩子供 **EarthSpirit** (地灵系统) 调用，例如地灵的“嘴馋清单”任务需要提交本系统产出的特产。
+*   **CuisineFarming (耕食传说)**: 深度集成。CuisineFarming 通过反射读取本插件的 `ConfigManager`，获取当前位置的群系加成/减罚值，统一纳入效率计算。
+*   **EarthSpirit (地灵系统)**: 提供物品钩子。地灵的“嘴馋清单”任务需要提交本系统产出的特产。
 
 ---
 
@@ -136,9 +149,9 @@ BiomeGifts 系统不仅仅依赖插件代码进行后期的掉落调整，还通
 | ID | 名称 | 原料 | 掉落来源 | 描述 |
 | :--- | :--- | :--- | :--- | :--- |
 | `LIGNITE` | 褐煤 | 煤炭 | 沼泽/雨林 | 质地疏松的煤炭，燃烧效率一般。 |
-| `RICH_SLAG` | 富集炉渣 | 铁粒 | 热带草原/石林 | 冶炼失败的产物，但含有极高的铁元素。 |
+| `RICH_SLAG` | 富铁 | 铁粒 | 热带草原/石林 | 冶炼失败的产物，但含有极高的铁元素。 |
 | `GOLD_DUST` | 砂金 | 金粒 | 恶地/河流 | 河床冲刷出的细小金粒。 |
-| `CHARGED_DUST` | 充能红石粉 | 红石 | 沙漠 | 吸收了静电的红石粉，能量极高。 |
+| `CHARGED_DUST` | 充能尘埃 | 红石 | 沙漠 | 吸收了静电的红石粉，能量极高。 |
 | `ICE_SHARD` | 永冻冰晶 | 钻石 | 雪山/冰刺 | 在极寒之地与钻石伴生的冰晶。 |
 | `TIDE_ESSENCE` | 洋流精粹 | 青金石 | 海洋/深海 | 凝结了海潮之力的蓝色宝石。 |
 | `COPPER_CRYSTAL` | 孔雀石晶体 | 粗铜 | 溶洞/河流 | 铜在特定环境下结晶出的伴生宝石。 |
