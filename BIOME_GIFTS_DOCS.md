@@ -67,7 +67,14 @@
 *   **条件**: 作物必须完全成熟 (`Age == MaxAge`)。
 *   **统一掉落机制 (Unified Drop System)**: 
     *   本插件作为**核心执行者**，接管了所有相关插件的特产掉落计算。
-    *   **公式**: `TotalChance = BaseChance (Biome) + FertilityBonus (Cuisine) + SpiritBonus (Spirit)`
+    *   **公式**: `TotalChance = BaseChance (Biome) * GeneMultiplier (Genetics) * (1.0 + FertilityBonus + SpiritBonus)`
+    *   **乘区说明**:
+        *   **BaseChance**: 群系基础概率 (Rich/Poor/Normal)。
+        *   **GeneMultiplier**: 基因产量修正 (`x0.75` ~ `x2.0`)。
+        *   **FertilityBonus**: 土地肥力提供的加成。
+            *   仅当肥力 > 100 时生效。
+            *   **范围**: `0.0` (100肥力) ~ `0.1` (150肥力)，即最大 **+10%** 概率。
+        *   **SpiritBonus**: 地灵心情提供的加成 (0.0 ~ 0.1)。
     *   这意味着不再有独立的“肥力掉落”或“地灵掉落”，所有加成统一汇总为单次判定，避免了多次独立判定导致的概率分布不均或“一次掉三份”的问题。
 *   **特殊机制**: 如果该作物被标记为 `SpecialCrop` (由灵契之种种植)，则**100%掉落**高阶特产，并移除特殊标记。
 
@@ -183,4 +190,4 @@ BiomeGifts 系统不仅仅依赖插件代码进行后期的掉落调整，还通
 ---
 
 **文档维护人**: 开发组
-**最后更新**: 2025-12-20
+**最后更新**: 2025-12-22

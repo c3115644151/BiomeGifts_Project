@@ -125,14 +125,27 @@ public class BiomeGifts extends JavaPlugin {
                 Object geneData = getGenesMethod.invoke(geneticsManager, block);
 
                 if (geneData != null) {
-                    Class<?> geneTypeClass = Class.forName("com.example.cuisinefarming.genetics.GeneType");
-                    Object yieldEnum = geneTypeClass.getField("YIELD").get(null);
-                    java.lang.reflect.Method getGeneMethod = geneData.getClass().getMethod("getGene", geneTypeClass);
-                    double yieldValue = (double) getGeneMethod.invoke(geneData, yieldEnum);
+                    Class<?> traitClass = Class.forName("com.example.cuisinefarming.genetics.Trait");
+                    Object yieldEnum = traitClass.getField("YIELD").get(null);
                     
-                    double bonusPercent = -0.25 + (yieldValue / 5.0) * 1.25;
-                    geneMultiplier = 1.0 + bonusPercent;
-                    if (geneMultiplier < 0.0) geneMultiplier = 0.0;
+                    // getGenePair(Trait) returns GenePair
+                    java.lang.reflect.Method getGenePairMethod = geneData.getClass().getMethod("getGenePair", traitClass);
+                    Object genePair = getGenePairMethod.invoke(geneData, yieldEnum);
+                    
+                    // GenePair.getPhenotypeValue() returns double
+                    java.lang.reflect.Method getPhenotypeValueMethod = genePair.getClass().getMethod("getPhenotypeValue");
+                    double yieldValue = (double) getPhenotypeValueMethod.invoke(genePair);
+                    
+                    // Normalize: [-10.0, 10.0] -> [0.5, 2.0]
+                    // Map [-10, 10] to [0.5, 2.0]
+                    // Formula: y = 0.075 * x + 1.25
+                    double multiplier = 0.075 * yieldValue + 1.25;
+                    
+                    // Clamp to range [0.5, 2.0]
+                    if (multiplier < 0.5) multiplier = 0.5;
+                    if (multiplier > 2.0) multiplier = 2.0;
+                    
+                    geneMultiplier = multiplier;
                 }
             } catch (Exception e) {
                 getLogger().warning("[BiomeGifts] Failed to integrate with CuisineFarming: " + e.getMessage());
