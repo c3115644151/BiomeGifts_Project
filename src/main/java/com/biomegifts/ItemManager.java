@@ -69,6 +69,28 @@ public class ItemManager {
         // 特殊种子
         registerItem("SPIRIT_WHEAT_SEEDS", Material.WHEAT_SEEDS, "灵契之种", 10013, "§6地灵赠予的特殊种子，成熟后必结出黄金麦穗。");
 
+        // 新增畜牧特产 (PastureSong)
+        // 奶牛
+        registerItem("FROST_FAT_MILK", Material.MILK_BUCKET, "霜脂牛乳", 10030, "§b产自寒冷地区的特浓牛奶，表面漂浮着一层厚厚的奶脂。");
+        registerItem("CONDENSED_CURD", Material.MILK_BUCKET, "浓缩乳酪", 10031, "§e炎热气候下水分蒸发形成的浓缩奶酪，口感极其厚重。");
+        registerItem("ANTIDOTE_MILK", Material.MILK_BUCKET, "解毒清乳", 10032, "§a雨林牛食用草药后产出的具有解毒功效的清乳。");
+        
+        // 绵羊
+        registerItem("CRYO_FLEECE", Material.WHITE_WOOL, "极地暖绒", 10033, "§b每一根纤维都像是冰晶拉丝而成，摸上去冰凉刺骨。");
+        registerItem("STATIC_WOOL", Material.WHITE_WOOL, "静电硬毛", 10034, "§e干燥环境下充满了静电的硬质羊毛，靠近会有酥麻感。");
+        registerItem("SILKY_YARN", Material.WHITE_WOOL, "丝滑柔纱", 10035, "§f如同丝绸般顺滑的高级羊毛，泛着珍珠般的光泽。");
+        
+        // 鸡
+        registerItem("ICE_QUILL", Material.FEATHER, "冰晶硬羽", 10036, "§b坚硬如冰锥的羽毛，极其锋利。");
+        registerItem("EMBER_FEATHER", Material.FEATHER, "余烬飞羽", 10037, "§c根部似乎还在燃烧的赤红羽毛，带有余温。");
+        registerItem("GOLDEN_SHELL_EGG", Material.EGG, "金壳蛋", 10038, "§6蛋壳呈现纯金色，拿在手里沉甸甸的。");
+        
+        // 猪
+        registerItem("BLACK_TRUFFLE", Material.BROWN_MUSHROOM, "黑松露", 10039, "§8散发着浓郁异香的黑色块菌，价比黄金。");
+        registerItem("SWAMP_ROOT", Material.BEETROOT, "沼泽药根", 10040, "§2生长在泥沼深处的扭曲根茎，蕴含着神秘的药性。");
+        registerItem("SAND_TUBER", Material.POTATO, "沙棘块茎", 10041, "§e为了在沙漠生存而储存了大量水分的块茎。");
+
+
         plugin.getLogger().info("Registered " + customItems.size() + " special items.");
     }
 

@@ -179,6 +179,7 @@ crops:
     poor_multiplier: 0.5
     poor_speed_penalty: 0.3
 
+
   # 胡萝卜：森林/平原
   CARROTS:
     drop_item: "RUBY_CARROT"
@@ -386,3 +387,95 @@ crops:
       - ".*OVERWORLD.*"
     poor_multiplier: 0.5
     poor_speed_penalty: 0.3
+
+# ==========================================
+# 畜牧特化 (Livestock Specialization)
+# ==========================================
+livestock:
+  # 奶牛
+  COW:
+    FROST_FAT_MILK:
+      drop_item: "FROST_FAT_MILK"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*SNOW.*"
+        - ".*ICE.*"
+        - ".*FROZEN.*"
+        - ".*TAIGA.*"
+    CONDENSED_CURD:
+      drop_item: "CONDENSED_CURD"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*DESERT.*"
+        - ".*BADLANDS.*"
+        - ".*SAVANNA.*"
+        - ".*NETHER.*"
+    ANTIDOTE_MILK:
+      drop_item: "ANTIDOTE_MILK"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*SWAMP.*"
+        - ".*JUNGLE.*"
+        - ".*RIVER.*"
+        - ".*OCEAN.*"
+
+  # 绵羊
+  SHEEP:
+    CRYO_FLEECE:
+      drop_item: "CRYO_FLEECE"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*SNOW.*"
+        - ".*ICE.*"
+        - ".*FROZEN.*"
+    STATIC_WOOL:
+      drop_item: "STATIC_WOOL"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*DESERT.*"
+        - ".*BADLANDS.*"
+        - ".*SAVANNA.*"
+    SILKY_YARN:
+      drop_item: "SILKY_YARN"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*FOREST.*"
+        - ".*PLAINS.*"
+        - ".*MEADOW.*"
+
+  # 鸡
+  CHICKEN:
+    ICE_QUILL:
+      drop_item: "ICE_QUILL"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*SNOW.*"
+        - ".*ICE.*"
+        - ".*FROZEN.*"
+    EMBER_FEATHER:
+      drop_item: "EMBER_FEATHER"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*DESERT.*"
+        - ".*BADLANDS.*"
+        - ".*NETHER.*"
+
+  # 猪
+  PIG:
+    BLACK_TRUFFLE:
+      drop_item: "BLACK_TRUFFLE"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*FOREST.*"
+        - ".*TAIGA.*"
+    SWAMP_ROOT:
+      drop_item: "SWAMP_ROOT"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*SWAMP.*"
+        - ".*JUNGLE.*"
+    SAND_TUBER:
+      drop_item: "SAND_TUBER"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*DESERT.*"

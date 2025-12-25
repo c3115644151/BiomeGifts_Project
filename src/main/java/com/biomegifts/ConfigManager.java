@@ -13,6 +13,7 @@ public class ConfigManager {
     // 缓存资源配置：Material -> ResourceConfig
     private final Map<Material, ResourceConfig> oreConfigs = new HashMap<>();
     private final Map<Material, CropConfig> cropConfigs = new HashMap<>();
+    private final Map<String, List<ResourceConfig>> livestockConfigs = new HashMap<>();
 
     public ConfigManager(BiomeGifts plugin) {
         this.plugin = plugin;
@@ -61,6 +62,22 @@ public class ConfigManager {
                 }
             }
         }
+
+        // Load Livestock
+        if (config.contains("livestock")) {
+            ConfigurationSection livestockSection = config.getConfigurationSection("livestock");
+            for (String entityType : livestockSection.getKeys(false)) {
+                ConfigurationSection entitySection = livestockSection.getConfigurationSection(entityType);
+                List<ResourceConfig> configs = new ArrayList<>();
+                
+                for (String productKey : entitySection.getKeys(false)) {
+                    ConfigurationSection productSection = entitySection.getConfigurationSection(productKey);
+                    configs.add(new ResourceConfig(productSection));
+                }
+                
+                livestockConfigs.put(entityType, configs);
+            }
+        }
     }
 
     public ResourceConfig getOreConfig(Material material) {
@@ -69,6 +86,10 @@ public class ConfigManager {
     
     public CropConfig getCropConfig(Material material) {
         return cropConfigs.get(material);
+    }
+    
+    public List<ResourceConfig> getLivestockConfigs(String entityType) {
+        return livestockConfigs.get(entityType);
     }
 
     // Inner classes for structured config data
