@@ -402,6 +402,11 @@ livestock:
         - ".*ICE.*"
         - ".*FROZEN.*"
         - ".*TAIGA.*"
+        - ".*COLD.*"
+        - ".*TUNDRA.*"
+        - ".*POLAR.*"
+        - ".*ALPINE.*"
+        - ".*GLACIER.*"
     CONDENSED_CURD:
       drop_item: "CONDENSED_CURD"
       base_chance: 1.0
@@ -410,6 +415,16 @@ livestock:
         - ".*BADLANDS.*"
         - ".*SAVANNA.*"
         - ".*NETHER.*"
+        - ".*VOLCANO.*"
+        - ".*ARID.*"
+        - ".*XERIC.*"
+        - ".*SANDSTONE.*"
+        - ".*TERRACOTTA.*"
+        - ".*PLATEAU.*"
+        - ".*MESA.*"
+        - ".*CANYON.*"
+        - ".*OASIS.*"
+        - ".*SALT.*"
     ANTIDOTE_MILK:
       drop_item: "ANTIDOTE_MILK"
       base_chance: 1.0
@@ -418,6 +433,22 @@ livestock:
         - ".*JUNGLE.*"
         - ".*RIVER.*"
         - ".*OCEAN.*"
+        - ".*RAINFOREST.*"
+        - ".*WETLANDS.*"
+        - ".*MARSH.*"
+        - ".*TROPICAL.*"
+        - ".*MANGROVE.*"
+        - ".*BAMBOO.*"
+        - ".*MONSOON.*"
+        - ".*PALM.*"
+        - ".*CERROS.*"
+        - ".*LUSH.*"
+        - ".*OVERGROWN.*"
+    RICH_MILK:
+      drop_item: "RICH_MILK"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*"
 
   # 绵羊
   SHEEP:
@@ -428,6 +459,10 @@ livestock:
         - ".*SNOW.*"
         - ".*ICE.*"
         - ".*FROZEN.*"
+        - ".*TUNDRA.*"
+        - ".*COLD.*"
+        - ".*TAIGA.*"
+        - ".*ALPINE.*"
     STATIC_WOOL:
       drop_item: "STATIC_WOOL"
       base_chance: 1.0
@@ -435,6 +470,15 @@ livestock:
         - ".*DESERT.*"
         - ".*BADLANDS.*"
         - ".*SAVANNA.*"
+        - ".*MESA.*"
+        - ".*PLATEAU.*"
+        - ".*CHAPARRAL.*"
+        - ".*SHRUBLAND.*"
+        - ".*ARID.*"
+        - ".*XERIC.*"
+        - ".*SANDSTONE.*"
+        - ".*TERRACOTTA.*"
+        - ".*DUNES.*"
     SILKY_YARN:
       drop_item: "SILKY_YARN"
       base_chance: 1.0
@@ -442,6 +486,24 @@ livestock:
         - ".*FOREST.*"
         - ".*PLAINS.*"
         - ".*MEADOW.*"
+        - ".*BIRCH.*"
+        - ".*FLOWERING.*"
+        - ".*PRAIRIE.*"
+        - ".*STEPPE.*"
+        - ".*HIGHLANDS.*"
+        - ".*CHERRY.*"
+        - ".*SAKURA.*"
+        - ".*GARDEN.*"
+        - ".*ORCHARD.*"
+        - ".*SHRUB.*"
+        - ".*MOOR.*"
+        - ".*HEATH.*"
+        - ".*VALLEY.*"
+    SOFT_WOOL:
+      drop_item: "SOFT_WOOL"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*"
 
   # 鸡
   CHICKEN:
@@ -452,6 +514,9 @@ livestock:
         - ".*SNOW.*"
         - ".*ICE.*"
         - ".*FROZEN.*"
+        - ".*TUNDRA.*"
+        - ".*COLD.*"
+        - ".*GLACIER.*"
     EMBER_FEATHER:
       drop_item: "EMBER_FEATHER"
       base_chance: 1.0
@@ -459,6 +524,35 @@ livestock:
         - ".*DESERT.*"
         - ".*BADLANDS.*"
         - ".*NETHER.*"
+        - ".*VOLCANO.*"
+        - ".*LAVA.*"
+        - ".*ASH.*"
+        - ".*CRIMSON.*"
+        - ".*WARPED.*"
+        - ".*SOUL.*"
+        - ".*BASALT.*"
+        - ".*MAGMA.*"
+    GOLDEN_SHELL_EGG:
+      drop_item: "GOLDEN_SHELL_EGG"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*LUSH.*"
+        - ".*FLOWERING.*"
+        - ".*PLAINS.*"
+        - ".*SUNFLOWER.*"
+        - ".*MEADOW.*"
+        - ".*GARDEN.*"
+        - ".*FOREST.*"
+        - ".*BIRCH.*"
+        - ".*CHERRY.*"
+        - ".*SAKURA.*"
+        - ".*AUTUMNAL.*"
+        - ".*EVERGREEN.*"
+    FINE_FEATHER:
+      drop_item: "FINE_FEATHER"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*"
 
   # 猪
   PIG:
@@ -468,14 +562,43 @@ livestock:
       rich_biomes:
         - ".*FOREST.*"
         - ".*TAIGA.*"
+        - ".*DARK_FOREST.*"
+        - ".*REDWOOD.*"
+        - ".*OLD_GROWTH.*"
+        - ".*SPRUCE.*"
+        - ".*BIRCH.*"
+        - ".*AUTUMNAL.*"
+        - ".*OAK.*"
+        - ".*DARK.*"
+        - ".*WOOD.*"
+        - ".*GROVE.*"
     SWAMP_ROOT:
       drop_item: "SWAMP_ROOT"
       base_chance: 1.0
       rich_biomes:
         - ".*SWAMP.*"
         - ".*JUNGLE.*"
+        - ".*MANGROVE.*"
+        - ".*BOG.*"
+        - ".*MARSH.*"
+        - ".*MUD.*"
+        - ".*BAYOU.*"
+        - ".*ESTUARY.*"
+        - ".*FEN.*"
     SAND_TUBER:
       drop_item: "SAND_TUBER"
       base_chance: 1.0
       rich_biomes:
         - ".*DESERT.*"
+        - ".*SAND.*"
+        - ".*BEACH.*"
+        - ".*DUNES.*"
+        - ".*RED_SAND.*"
+        - ".*ARID.*"
+        - ".*MESA.*"
+        - ".*BADLANDS.*"
+    WHITE_TRUFFLE:
+      drop_item: "WHITE_TRUFFLE"
+      base_chance: 1.0
+      rich_biomes:
+        - ".*"

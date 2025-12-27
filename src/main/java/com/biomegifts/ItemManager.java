@@ -90,6 +90,12 @@ public class ItemManager {
         registerItem("SWAMP_ROOT", Material.BEETROOT, "沼泽药根", 10040, "§2生长在泥沼深处的扭曲根茎，蕴含着神秘的药性。");
         registerItem("SAND_TUBER", Material.POTATO, "沙棘块茎", 10041, "§e为了在沙漠生存而储存了大量水分的块茎。");
 
+        // 基础特产 (Basic Specialties - Any Biome)
+        registerItem("RICH_MILK", Material.MILK_BUCKET, "醇香牛乳", 10042, "§f口感醇厚，比普通牛奶更有营养。");
+        registerItem("SOFT_WOOL", Material.WHITE_WOOL, "柔软羊毛", 10043, "§f比普通羊毛更加柔软舒适。");
+        registerItem("FINE_FEATHER", Material.FEATHER, "优质羽毛", 10044, "§f挑选出的完整羽毛，适合制作工艺品。");
+        registerItem("WHITE_TRUFFLE", Material.BROWN_MUSHROOM, "白松露", 10045, "§f虽然不如黑松露珍贵，但也是不错的食材。");
+
 
         plugin.getLogger().info("Registered " + customItems.size() + " special items.");
     }
