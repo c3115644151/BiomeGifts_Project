@@ -4,6 +4,7 @@ main: com.biomegifts.BiomeGifts
 api-version: 1.21
 authors: [TraeAI]
 description: A plugin that adds biome-specific gifts and crop growth modifiers.
+depend: [CuisineFarming]
 commands:
   getgift:
     description: 获取地域馈赠物品

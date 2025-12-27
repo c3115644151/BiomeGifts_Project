@@ -97,6 +97,23 @@ public class CropListener implements Listener {
         if (ThreadLocalRandom.current().nextDouble() < totalChance) {
              ItemStack drop = plugin.getItemManager().getItem(config.dropItem);
              if (drop != null) {
+                 // [New] Apply Star Rating from CuisineFarming
+                 if (org.bukkit.Bukkit.getPluginManager().isPluginEnabled("CuisineFarming")) {
+                     try {
+                         com.example.cuisinefarming.CuisineFarming cuisinePlugin = com.example.cuisinefarming.CuisineFarming.getInstance();
+                         if (cuisinePlugin != null) {
+                             com.example.cuisinefarming.genetics.GeneticsManager gm = cuisinePlugin.getGeneticsManager();
+                             com.example.cuisinefarming.genetics.GeneData geneData = gm.getGenesFromBlock(block);
+                             if (geneData != null) {
+                                 int stars = geneData.calculateStarRating();
+                                 gm.saveStarToItem(drop, stars);
+                             }
+                         }
+                     } catch (Exception e) {
+                         plugin.getLogger().warning("Failed to apply star rating to BiomeGift: " + e.getMessage());
+                     }
+                 }
+
                  block.getWorld().dropItemNaturally(block.getLocation(), drop);
                  // Sound
                  block.getWorld().playSound(block.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.3f, 2.0f);
