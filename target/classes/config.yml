@@ -16,10 +16,20 @@ ores:
     rich_biomes: 
       - ".*SWAMP.*"
       - ".*JUNGLE.*"
+      - ".*RAINFOREST.*"
+      - ".*MONSOON.*"
+      - ".*BAMBOO.*"
+      - ".*WETLANDS.*"
+      - ".*MARSH.*"
+      - ".*MANGROVE.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*DESERT.*"
       - ".*BADLANDS.*"
+      - ".*ARID.*"
+      - ".*SALT.*"
+      - ".*DUNES.*"
+      - ".*OASIS.*"
     poor_multiplier: 0.5
     
   # 铁矿：热带草原/石林(Terra)富集
@@ -31,9 +41,17 @@ ores:
       - ".*SAVANNA.*"
       - ".*STONY.*"
       - ".*MEADOW.*"
+      - ".*SHRUBLAND.*"
+      - ".*CHAPARRAL.*"
+      - ".*XERIC.*"
+      - ".*HIGHLANDS.*"
+      - ".*STEPPE.*"
+      - ".*PRAIRIE.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*OCEAN.*"
+      - ".*SEA.*"
+      - ".*BEACH.*"
     poor_multiplier: 0.5
 
   # 铜矿：溶洞/河流富集
@@ -45,9 +63,15 @@ ores:
       - ".*DRIPSTONE.*"
       - ".*RIVER.*"
       - ".*BEACH.*"
+      - ".*COAST.*"
+      - ".*ARCHIPELAGO.*"
+      - ".*LAKE.*"
+      - ".*CREEK.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*DESERT.*"
+      - ".*ARID.*"
+      - ".*SALT.*"
     poor_multiplier: 0.5
 
   # 金矿：恶地/河流富集
@@ -59,9 +83,15 @@ ores:
       - ".*BADLANDS.*"
       - ".*RIVER.*"
       - ".*MESA.*"
+      - ".*RED_SAND.*"
+      - ".*PLATEAU.*"
+      - ".*CANYON.*"
+      - ".*TERRACOTTA.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*FOREST.*"
+      - ".*WOODS.*"
+      - ".*GROVE.*"
     poor_multiplier: 0.5
     
   # 红石：沙漠富集
@@ -71,10 +101,16 @@ ores:
     base_chance: 0.2
     rich_biomes:
       - ".*DESERT.*"
+      - ".*ARID.*"
+      - ".*SALT.*"
+      - ".*DUNES.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*SNOW.*"
       - ".*ICE.*"
+      - ".*FROZEN.*"
+      - ".*GLACIER.*"
+      - ".*TUNDRA.*"
     poor_multiplier: 0.5
     
   # 钻石：雪山/冰刺富集
@@ -86,10 +122,17 @@ ores:
       - ".*SNOW.*"
       - ".*ICE.*"
       - ".*FROZEN.*"
+      - ".*GLACIER.*"
+      - ".*TUNDRA.*"
+      - ".*COLD.*"
+      - ".*ALPINE.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*DESERT.*"
       - ".*JUNGLE.*"
+      - ".*ARID.*"
+      - ".*RAINFOREST.*"
+      - ".*TROPICAL.*"
     poor_multiplier: 0.5
     
   # 青金石：海洋/深海富集
@@ -100,9 +143,16 @@ ores:
     rich_biomes:
       - ".*OCEAN.*"
       - ".*BEACH.*"
+      - ".*SEA.*"
+      - ".*COAST.*"
+      - ".*ISLAND.*"
+      - ".*ARCHIPELAGO.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*PEAKS.*"
+      - ".*MOUNTAIN.*"
+      - ".*SUMMIT.*"
+      - ".*ALPINE.*"
     poor_multiplier: 0.5
 
   # 绿宝石：高山/山地富集
@@ -115,10 +165,17 @@ ores:
       - ".*PEAKS.*"
       - ".*HILLS.*"
       - ".*SLOPES.*"
+      - ".*ALPINE.*"
+      - ".*SUMMIT.*"
+      - ".*CLIFF.*"
+      - ".*HIGHLANDS.*"
+      - ".*CRAG.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*OCEAN.*"
       - ".*PLAINS.*"
+      - ".*SEA.*"
+      - ".*FLATS.*"
     poor_multiplier: 0.5
 
   # 紫水晶：繁茂洞穴/溶洞富集
@@ -128,6 +185,7 @@ ores:
     rich_biomes:
       - ".*LUSH.*"
       - ".*DRIPSTONE.*"
+      - ".*CAVE.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*PLAINS.*"
@@ -140,6 +198,8 @@ ores:
     rich_biomes:
       - ".*NETHER_WASTES.*"
       - ".*SOUL_SAND_VALLEY.*"
+      - ".*SOUL.*"
+      - ".*WASTES.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*CRIMSON.*"
@@ -153,6 +213,9 @@ ores:
     rich_biomes:
       - ".*BASALT.*"
       - ".*DELTAS.*"
+      - ".*VOLCAN.*"
+      - ".*ASH.*"
+      - ".*CALDERA.*"
     rich_multiplier: 1.5
     poor_biomes:
       - ".*SOUL.*"

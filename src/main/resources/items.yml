@@ -1,0 +1,302 @@
+items:
+  LIGNITE:
+    material: COAL
+    name: "高能褐煤"
+    custom-model-data: 10001
+    star: true
+    lore:
+      - "沼泽的沉积更久，产出的煤含碳量极高。"
+  RICH_SLAG:
+    material: RAW_IRON
+    name: "富铁"
+    custom-model-data: 10006
+    star: true
+    lore:
+      - "高原地区裸露的铁矿，受天体辐射变异。"
+  GOLD_DUST:
+    material: RAW_GOLD
+    name: "纯度金沙"
+    custom-model-data: 10007
+    star: true
+    lore:
+      - "河流冲刷出的高纯度金。"
+  CHARGED_DUST:
+    material: REDSTONE
+    name: "充能尘埃"
+    custom-model-data: 10008
+    star: true
+    lore:
+      - "干热环境让红石带有不稳定的高能电荷。"
+  ICE_SHARD:
+    material: DIAMOND
+    name: "冰川碎钻"
+    custom-model-data: 10003
+    star: true
+    lore:
+      - "极寒高压下形成的特殊钻石，带有冰属性。"
+  TIDE_ESSENCE:
+    material: LAPIS_LAZULI
+    name: "海潮沉淀"
+    custom-model-data: 10009
+    star: true
+    lore:
+      - "吸收了深海魔力的矿石伴生物。"
+  GOLDEN_WHEAT:
+    material: WHEAT
+    name: "黄金麦穗"
+    custom-model-data: 10005
+    star: true
+    lore:
+      - "只有温带的阳光才能晒出的饱满谷物。"
+  WATER_GEL:
+    material: SLIME_BALL
+    name: "储水凝胶"
+    custom-model-data: 10010
+    star: true
+    lore:
+      - "沙漠植物为了生存进化出的精华。"
+  TROPICAL_NECTAR:
+    material: HONEY_BOTTLE
+    name: "热带糖蜜"
+    custom-model-data: 10011
+    star: true
+    lore:
+      - "湿热环境下积累的高糖分蜜露。"
+  FROST_BERRY:
+    material: SWEET_BERRIES
+    name: "霜糖果实"
+    custom-model-data: 10012
+    star: true
+    lore:
+      - "经霜之后变得异常甜美的果实。"
+  COPPER_CRYSTAL:
+    material: RAW_COPPER
+    name: "孔雀石晶体"
+    custom-model-data: 10014
+    star: true
+    lore:
+      - "铜在特定环境下结晶出的伴生宝石，有一种氧化后的美感。"
+  JADE_SHARD:
+    material: EMERALD
+    name: "高山翠玉"
+    custom-model-data: 10015
+    star: true
+    lore:
+      - "比绿宝石更纯净，带有东方韵味的玉石原石。"
+  ECHO_SHARD:
+    material: AMETHYST_SHARD
+    name: "共鸣晶簇"
+    custom-model-data: 10016
+    star: true
+    lore:
+      - "发着微光的紫色尖刺状晶体，周围有一圈声波状的粒子效果。"
+  SOUL_SHARD:
+    material: QUARTZ
+    name: "灵魂玻片"
+    custom-model-data: 10017
+    star: true
+    lore:
+      - "苍白半透明的薄片，里面仿佛封印着扭曲的灵魂面孔。"
+  VULCAN_SCALE:
+    material: NETHERITE_SCRAP
+    name: "火神之鳞"
+    custom-model-data: 10018
+    star: true
+    lore:
+      - "暗金色带有熔岩裂纹的鳞片状金属，看起来非常坚硬且烫手。"
+  TERRA_POTATO:
+    material: POTATO
+    name: "大地之心薯"
+    custom-model-data: 10019
+    star: true
+    lore:
+      - "吸收了大地精华的完美块茎，看起来就淀粉满满，非常抗饿。"
+  RUBY_CARROT:
+    material: CARROT
+    name: "红玉胡萝卜"
+    custom-model-data: 10020
+    star: true
+    lore:
+      - "通体晶莹剔透，富含维生素到了结晶的地步，据说吃了眼睛会发光。"
+  CRIMSON_ESSENCE:
+    material: BEETROOT
+    name: "深红血精"
+    custom-model-data: 10021
+    star: true
+    lore:
+      - "饱满的深红色球体，这是提纯后的生命精华。"
+  GLOW_PUMPKIN:
+    material: PUMPKIN_SEEDS
+    name: "辉光南瓜瓤"
+    custom-model-data: 10022
+    star: true
+    lore:
+      - "吸收了日照的精华，哪怕不插火把，它自己都在发光。"
+  CRYSTAL_CANE:
+    material: SUGAR_CANE
+    name: "水晶糖柱"
+    custom-model-data: 10023
+    star: true
+    lore:
+      - "像玻璃棒一样透明，糖分饱和度200%的极品甘蔗。"
+  DARK_COCOA:
+    material: COCOA_BEANS
+    name: "醇黑可可脂"
+    custom-model-data: 10024
+    star: true
+    lore:
+      - "顶级巧克力的原材料，看着就觉得苦中带甜。"
+  JADE_SHOOT:
+    material: BAMBOO
+    name: "翠玉竹笋"
+    custom-model-data: 10025
+    star: true
+    lore:
+      - "质感完全是玉石的短小竹笋，熊猫看了都舍不得吃的宝物。"
+  IODINE_CRYSTAL:
+    material: DRIED_KELP
+    name: "深海碘晶"
+    custom-model-data: 10026
+    star: true
+    lore:
+      - "来自深海的馈赠，炼金术的重要材料。"
+  DOOM_SPORE:
+    material: NETHER_WART
+    name: "厄运孢子簇"
+    custom-model-data: 10027
+    star: true
+    lore:
+      - "炼制邪恶药水的核心，看着就掉SAN值。"
+  CAVE_PEARL:
+    material: GLOW_BERRIES
+    name: "洞穴夜明珠"
+    custom-model-data: 10028
+    star: true
+    lore:
+      - "繁茂洞穴的照明之源，可以挂在身上当灯泡。"
+  VOID_CORE:
+    material: CHORUS_FRUIT
+    name: "虚空回响核"
+    custom-model-data: 10029
+    star: true
+    lore:
+      - "形状破碎的几何体，吃下去可能会瞬移到另一个维度。"
+  SPIRIT_WHEAT_SEEDS:
+    material: WHEAT_SEEDS
+    name: "灵契之种"
+    custom-model-data: 10013
+    star: false
+    lore:
+      - "地灵赠予的特殊种子，成熟后必结出黄金麦穗。"
+  FROST_FAT_MILK:
+    material: MILK_BUCKET
+    name: "霜脂牛乳"
+    custom-model-data: 10030
+    star: true
+    lore:
+      - "产自寒冷地区的特浓牛奶，表面漂浮着一层厚厚的奶脂。"
+  CONDENSED_CURD:
+    material: MILK_BUCKET
+    name: "浓缩乳酪"
+    custom-model-data: 10031
+    star: true
+    lore:
+      - "炎热气候下水分蒸发形成的浓缩奶酪，口感极其厚重。"
+  ANTIDOTE_MILK:
+    material: MILK_BUCKET
+    name: "解毒清乳"
+    custom-model-data: 10032
+    star: true
+    lore:
+      - "雨林牛食用草药后产出的具有解毒功效的清乳。"
+  CRYO_FLEECE:
+    material: WHITE_WOOL
+    name: "极地暖绒"
+    custom-model-data: 10033
+    star: true
+    lore:
+      - "每一根纤维都像是冰晶拉丝而成，摸上去冰凉刺骨。"
+  STATIC_WOOL:
+    material: WHITE_WOOL
+    name: "静电硬毛"
+    custom-model-data: 10034
+    star: true
+    lore:
+      - "干燥环境下充满了静电的硬质羊毛，靠近会有酥麻感。"
+  SILKY_YARN:
+    material: WHITE_WOOL
+    name: "丝滑柔纱"
+    custom-model-data: 10035
+    star: true
+    lore:
+      - "如同丝绸般顺滑的高级羊毛，泛着珍珠般的光泽。"
+  ICE_QUILL:
+    material: FEATHER
+    name: "冰晶硬羽"
+    custom-model-data: 10036
+    star: true
+    lore:
+      - "坚硬如冰锥的羽毛，极其锋利。"
+  EMBER_FEATHER:
+    material: FEATHER
+    name: "余烬飞羽"
+    custom-model-data: 10037
+    star: true
+    lore:
+      - "根部似乎还在燃烧的赤红羽毛，带有余温。"
+  GOLDEN_SHELL_EGG:
+    material: EGG
+    name: "金壳蛋"
+    custom-model-data: 10038
+    star: true
+    lore:
+      - "蛋壳呈现纯金色，拿在手里沉甸甸的。"
+  BLACK_TRUFFLE:
+    material: BROWN_MUSHROOM
+    name: "黑松露"
+    custom-model-data: 10039
+    star: true
+    lore:
+      - "散发着浓郁异香的黑色块菌，价比黄金。"
+  SWAMP_ROOT:
+    material: BEETROOT
+    name: "沼泽药根"
+    custom-model-data: 10040
+    star: true
+    lore:
+      - "生长在泥沼深处的扭曲根茎，蕴含着神秘的药性。"
+  SAND_TUBER:
+    material: POTATO
+    name: "沙棘块茎"
+    custom-model-data: 10041
+    star: true
+    lore:
+      - "为了在沙漠生存而储存了大量水分的块茎。"
+  RICH_MILK:
+    material: MILK_BUCKET
+    name: "醇香牛乳"
+    custom-model-data: 10042
+    star: true
+    lore:
+      - "口感醇厚，比普通牛奶更有营养。"
+  SOFT_WOOL:
+    material: WHITE_WOOL
+    name: "柔软羊毛"
+    custom-model-data: 10043
+    star: true
+    lore:
+      - "比普通羊毛更加柔软舒适。"
+  FINE_FEATHER:
+    material: FEATHER
+    name: "优质羽毛"
+    custom-model-data: 10044
+    star: true
+    lore:
+      - "挑选出的完整羽毛，适合制作工艺品。"
+  WHITE_TRUFFLE:
+    material: BROWN_MUSHROOM
+    name: "白松露"
+    custom-model-data: 10045
+    star: true
+    lore:
+      - "虽然不如黑松露珍贵，但也是不错的食材。"

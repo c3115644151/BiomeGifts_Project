@@ -1,0 +1,27 @@
+# ==============================================================================
+# BiomeGifts - Nexus Recipe Configuration
+# ==============================================================================
+
+ice_shard_crafting:
+  type: shaped
+  result:
+    item: biome-gifts:ice_shard
+    amount: 1
+  shape:
+    - " S "
+    - "SDS"
+    - " S "
+  ingredients:
+    S:
+      item: minecraft:snowball
+    D:
+      item: minecraft:diamond
+
+frost_berry_crafting:
+  type: shapeless
+  result:
+    item: biome-gifts:frost_berry
+    amount: 4
+  ingredients:
+    - item: minecraft:sweet_berries
+    - item: minecraft:ice
